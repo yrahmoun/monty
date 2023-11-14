@@ -20,37 +20,25 @@ int check_space(char *s)
 }
 
 /**
- * execute - execute the operation in the line read
- * @line: line read
+ * execute2 - execute the operation in the line read
  * @line_number: line number
  * @head: pointer to stack
+ * @str: array holding operation
  */
 
-void execute(char *line, unsigned int line_number, stack_t **head)
+void execute2(unsigned int line_number,
+	stack_t **head, char **str)
 {
-	int i = 0;
-	char **str;
 	int found = 0;
+	int i = 0;
 	instruction_t inst[] = {
 		{"pall", pall_op},
 		{"pint", pint_op},
 		{"pop", pop_op},
+		{"swap", swap_op},
 		{NULL, NULL}
 	};
 
-	if (check_space(line))
-		return;
-	str = split_space(line);
-	if (str[0][0] == '#')
-	{
-		free_all(str, len_calc(str));
-		return;
-	}
-	if (!strcmp(str[0], "push"))
-	{
-		push_op(str, line_number, head);
-		return;
-	}
 	while (inst[i].opcode != NULL)
 	{
 		if (!strcmp(inst[i].opcode, str[0]))
@@ -68,4 +56,31 @@ void execute(char *line, unsigned int line_number, stack_t **head)
 		free_all(str, len_calc(str));
 	}
 	free_all(str, len_calc(str));
+}
+
+/**
+ * execute - execute the operation in the line read
+ * @line: line read
+ * @line_number: line number
+ * @head: pointer to stack
+ */
+
+void execute(char *line, unsigned int line_number, stack_t **head)
+{
+	char **str;
+
+	if (check_space(line))
+		return;
+	str = split_space(line);
+	if (str[0][0] == '#')
+	{
+		free_all(str, len_calc(str));
+		return;
+	}
+	if (!strcmp(str[0], "push"))
+	{
+		push_op(str, line_number, head);
+		return;
+	}
+	execute2(line_number, head, str);
 }
