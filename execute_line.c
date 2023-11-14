@@ -34,6 +34,7 @@ void execute(char *line, unsigned int line_number, stack_t **head)
 	instruction_t inst[] = {
 		{"pall", pall_op},
 		{"pint", pint_op},
+		{"pop", pop_op},
 		{NULL, NULL}
 	};
 

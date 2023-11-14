@@ -46,5 +46,6 @@ void push_op(char **str, unsigned int  line_number, stack_t  **head);
 void pall_op(stack_t **head, unsigned int line_number);
 int check_digit(char *s);
 void pint_op(stack_t **head, unsigned int line_number);
+void pop_op(stack_t **head, unsigned int line_number);
 
 #endif
