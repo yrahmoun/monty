@@ -36,6 +36,7 @@ void execute2(unsigned int line_number,
 		{"pint", pint_op},
 		{"pop", pop_op},
 		{"swap", swap_op},
+		{"add", add_op},
 		{NULL, NULL}
 	};
 
