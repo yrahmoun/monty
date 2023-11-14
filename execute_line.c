@@ -37,6 +37,7 @@ void execute2(unsigned int line_number,
 		{"pop", pop_op},
 		{"swap", swap_op},
 		{"add", add_op},
+		{"nop", nop_op},
 		{NULL, NULL}
 	};
 
@@ -83,7 +84,5 @@ void execute(char *line, unsigned int line_number, stack_t **head)
 		push_op(str, line_number, head);
 		return;
 	}
-	if (!strcmp(str[0], "nop"))
-		return;
 	execute2(line_number, head, str);
 }
