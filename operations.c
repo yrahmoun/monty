@@ -50,3 +50,20 @@ void pall_op(stack_t **head, unsigned int line_number)
 		curr = curr->next;
 	}
 }
+
+/**
+ * pint_op - prints the value at the top of the stack
+ * @head: pointer to stack
+ * @line_number: line number
+ */
+
+void pint_op(stack_t **head, unsigned int line_number)
+{
+	if (*head == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*head)->n);
+}

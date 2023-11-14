@@ -33,6 +33,7 @@ void execute(char *line, unsigned int line_number, stack_t **head)
 	int found = 0;
 	instruction_t inst[] = {
 		{"pall", pall_op},
+		{"pint", pint_op},
 		{NULL, NULL}
 	};
 
