@@ -13,7 +13,7 @@ void add_op(stack_t **head, unsigned int line_number)
 
 	if (!*head || !head || !(*head)->next)
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n",
+		fprintf(stderr, "L%d: can't add, stack too short\n\n",
 			line_number);
 		exit(EXIT_FAILURE);
 	}
