@@ -11,7 +11,12 @@ void push_op(char **str, unsigned int line_number, stack_t **head)
 {
 	stack_t *new;
 
-	if (!str[1] || !check_digit(str[1]) || !head)
+	if (!head || !*head)
+	{
+		free_all(str, len_calc(str));
+		exit(EXIT_FAILURE);
+	}
+	if (!str[1] || !check_digit(str[1]))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free_all(str, len_calc(str));
