@@ -38,6 +38,7 @@ void execute2(unsigned int line_number,
 		{"swap", swap_op},
 		{"add", add_op},
 		{"nop", nop_op},
+		{"sub", sub_op},
 		{NULL, NULL}
 	};
 
