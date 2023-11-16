@@ -10,10 +10,12 @@ int check_digit(char *s)
 {
 	int i = 0;
 
+	if (!s || !*s)
+		return (0);
+	if (s[i] == '-' || s[i] == '+')
+		return (0);
 	while (s[i])
 	{
-		if (s[0] == '-')
-			i++;
 		if (!isdigit(s[i]))
 			return (0);
 		i++;

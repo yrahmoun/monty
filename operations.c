@@ -13,7 +13,7 @@ void push_op(char **str, unsigned int line_number, stack_t **head)
 
 	if (!str[1] || !check_digit(str[1]) || !head)
 	{
-		fprintf(stderr, "L%d: usage: push integer", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free_all(str, len_calc(str));
 		exit(EXIT_FAILURE);
 	}
