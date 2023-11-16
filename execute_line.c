@@ -78,7 +78,7 @@ void execute(char *line, unsigned int line_number, stack_t **head)
 	if (check_space(line))
 		return;
 	str = split_space(line);
-	if (str[0][0] == '#')
+	if (str[0] && str[0][0] == '#')
 	{
 		free_all(str, len_calc(str));
 		return;
