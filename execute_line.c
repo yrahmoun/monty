@@ -40,6 +40,7 @@ void execute2(unsigned int line_number,
 		{"nop", nop_op},
 		{"sub", sub_op},
 		{"div", div_op},
+		{"mul", mul_op},
 		{NULL, NULL}
 	};
 
